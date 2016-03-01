@@ -1,14 +1,17 @@
+/**
+ * Created by RonNegi on 01/03/16.
+ */
 particlesJS("particles-js", {
     "particles": {
         "number": {
-            "value": 600,
+            "value": 149,
             "density": {
                 "enable": true,
-                "value_area": 800
+                "value_area": 1183.723797780518
             }
         },
         "color": {
-            "value": "#ffffff"
+            "value": "#78ff00"
         },
         "shape": {
             "type": "circle",
@@ -26,44 +29,44 @@ particlesJS("particles-js", {
             }
         },
         "opacity": {
-            "value": 1,
-            "random": true,
+            "value": 0.9540273080295628,
+            "random": false,
             "anim": {
-                "enable": true,
-                "speed": 1,
-                "opacity_min": 0,
+                "enable": false,
+                "speed": 1.1369115594467707,
+                "opacity_min": 0.9176500444106078,
                 "sync": false
             }
         },
         "size": {
             "value": 3,
-            "random": true,
+            "random": false,
             "anim": {
-                "enable": false,
-                "speed": 4,
-                "size_min": 0.3,
+                "enable": true,
+                "speed": 5,
+                "size_min": 6.496637482552975,
                 "sync": false
             }
         },
         "line_linked": {
-            "enable": false,
-            "distance": 150,
+            "enable": true,
+            "distance": 110,
             "color": "#ffffff",
-            "opacity": 0.4,
-            "width": 1
+            "opacity": 0.45697106350995864,
+            "width": 2.4051108605787297
         },
         "move": {
             "enable": true,
-            "speed": 1,
+            "speed": 6,
             "direction": "none",
             "random": true,
             "straight": false,
             "out_mode": "out",
             "bounce": false,
             "attract": {
-                "enable": false,
-                "rotateX": 600,
-                "rotateY": 600
+                "enable": true,
+                "rotateX": 3768.007014906677,
+                "rotateY": 3527.495928848804
             }
         }
     },
@@ -72,30 +75,30 @@ particlesJS("particles-js", {
         "events": {
             "onhover": {
                 "enable": true,
-                "mode": "bubble"
+                "mode": "grab"
             },
             "onclick": {
                 "enable": true,
-                "mode": "repulse"
+                "mode": "push"
             },
             "resize": true
         },
         "modes": {
             "grab": {
-                "distance": 400,
+                "distance": 121.8119527978683,
                 "line_linked": {
-                    "opacity": 1
+                    "opacity": 0.6169665809768637
                 }
             },
             "bubble": {
-                "distance": 10,
-                "size": 0,
+                "distance": 400,
+                "size": 40,
                 "duration": 2,
-                "opacity": 0,
+                "opacity": 8,
                 "speed": 3
             },
             "repulse": {
-                "distance": 199.8001998001998,
+                "distance": 200,
                 "duration": 0.4
             },
             "push": {
@@ -108,3 +111,20 @@ particlesJS("particles-js", {
     },
     "retina_detect": true
 });
+var count_particles, stats, update;
+stats = new Stats;
+stats.setMode(0);
+stats.domElement.style.position = 'absolute';
+stats.domElement.style.left = '0px';
+stats.domElement.style.top = '0px';
+document.body.appendChild(stats.domElement);
+count_particles = document.querySelector('.js-count-particles');
+update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+        count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+};
+requestAnimationFrame(update);;
