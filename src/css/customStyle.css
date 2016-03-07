@@ -10,6 +10,9 @@ body{
 
 }
 
+.parallaxo{
+    opacity: 0.8;
+}
 #intro-btn{
     margin-top: 420px;
     width: 300px;
