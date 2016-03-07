@@ -21,10 +21,14 @@ canvas {
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: 50% 50%;
+
+    opacity: 0.8;
 }
 
 
 /* ---- stats.js ---- */
+
+
 
 .count-particles {
     background: #000022;
