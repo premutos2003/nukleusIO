@@ -12,6 +12,8 @@ body{
 
 .parallaxo{
     opacity: 0.8;
+    background-position: 50%50%;
+    background-size: 100%;
 }
 #intro-btn{
     margin-top: 420px;
